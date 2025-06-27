@@ -181,18 +181,54 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(106, 53, 156, 0.3), rgba(106, 53, 156, 0.3)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--white);
             padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(106, 53, 156, 0.3), rgba(106, 53, 156, 0.3));
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
@@ -666,8 +702,8 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-    <img src="images/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
-</a>
+                <img src="https://via.placeholder.com/150x50?text=Ativikids+Logo" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+            </a>
             <nav>
                 <ul>
                     <li><a href="#">Início</a></li>
@@ -683,6 +719,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1542816417-09836749781e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        </div>
         <div class="container hero-content">
             <h1>Recreação Infantil em Maringá</h1>
             <p>Transformamos festas infantis em experiências mágicas e inesquecíveis na região de Maringá - PR</p>
@@ -999,7 +1041,9 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">Ativi<span>Kids</span></a>
+                    <a href="#" class="footer-logo">
+                        <img src="https://via.placeholder.com/150x50?text=Ativikids+Logo" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+                    </a>
                     <p>Criando memórias mágicas e inesquecíveis para crianças e famílias em Maringá e região desde 2010.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1085,6 +1129,21 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Hero Slideshow
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Change slide every 2 seconds
+            setInterval(nextSlide, 2000);
         });
     </script>
 </body>
