@@ -84,22 +84,23 @@
             align-items: center;
         }
         
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--purple-main);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+        /* Logo Image */
+        .logo-img {
+            height: 50px; /* Ajuste conforme necessário */
+            width: auto;
+            transition: all 0.3s ease;
         }
-        
-        .logo span {
-            color: var(--orange-main);
+
+        /* Ajuste para mobile */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 40px;
+            }
         }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 32px;
+
+        /* Remova o ícone de magia se não for mais necessário */
+        .logo i.fa-magic {
+            display: none;
         }
         
         nav ul {
@@ -665,9 +666,8 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-magic"></i>
-                Ativi<span>Kids</span>
-            </a>
+    <img src="images/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+</a>
             <nav>
                 <ul>
                     <li><a href="#">Início</a></li>
