@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativikids - Recreação Infantil Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --purple-main: #6A359C;
+            --purple-pastel: #B399D4;
+            --orange-main: #FF6B35;
+            --orange-pastel: #FFB088;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--purple-main);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--purple-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--orange-main);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--purple-main);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--orange-main);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #E05A2B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--purple-main);
+            border: 2px solid var(--purple-main);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--purple-main);
+            color: var(--white);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(106, 53, 156, 0.3), rgba(106, 53, 156, 0.3)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: var(--white);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--purple-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--purple-main);
+            font-size: 32px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--orange-main);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(106, 53, 156, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 40px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--purple-pastel);
+        }
+        
+        .testimonials .section-title h2 {
+            color: var(--white);
+        }
+        
+        .testimonials .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author h4 {
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-author p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .testimonial-stars {
+            color: var(--orange-main);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--purple-pastel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purple-main);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--purple-main);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .security-badge i {
+            color: var(--purple-main);
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--purple-main);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--orange-pastel);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--orange-main);
+        }
+        
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--orange-pastel);
+        }
+        
+        .footer-contact .contact-item {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer-contact .contact-icon {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .payment-methods img {
+            height: 30px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-magic"></i>
+                Ativi<span>Kids</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn btn-primary">Reserve Agora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Crie Memórias Mágicas para Seu Filho</h1>
+            <p>Recreação profissional para festas infantis inesquecíveis com segurança, diversão e muito glamour</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Solicitar Orçamento</a>
+                <a href="#services" class="btn btn-secondary">Ver Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que escolher nossa recreação?</h2>
+                <p>Oferecemos uma experiência completa e personalizada para festas infantis de alto padrão</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Monitores Profissionais</h3>
+                    <p>Equipe especializada em recreação infantil, treinada em primeiros socorros e com experiência em eventos premium.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Atividades Personalizadas</h3>
+                    <p>Programação exclusiva desenvolvida para cada faixa etária e tema de festa, garantindo diversão para todas as crianças.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança em Primeiro Lugar</h3>
+                    <p>Todos os nossos equipamentos seguem normas de segurança e nossos monitores são treinados para prevenir acidentes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Experiência Completa</h3>
+                    <p>Desde o planejamento até a execução, cuidamos de todos os detalhes para que você possa aproveitar a festa com seu filho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços Premium</h2>
+                <p>Conheça nossos pacotes exclusivos para festas inesquecíveis</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Temas de Festa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Temas Exclusivos</h3>
+                        <p>Transformamos seu espaço com decoração temática completa: princesas, super-heróis, safari e muito mais.</p>
+                        <div class="service-price">A partir de R$ 1.200</div>
+                        <a href="#contact" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1570303345338-e1f0ed7b5885?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Brinquedos Infláveis">
+                    </div>
+                    <div class="service-content">
+                        <h3>Brinquedos Infláveis Premium</h3>
+                        <p>Castelos, tobogãs e piscinas de bolinhas de alta qualidade e segurança para horas de diversão.</p>
+                        <div class="service-price">A partir de R$ 800</div>
+                        <a href="#contact" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1608889825103-eb5c14bdd606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficinas Criativas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Oficinas Criativas</h3>
+                        <p>Atividades lúdicas e educativas como pintura, slime, culinária infantil e muito mais com monitores especializados.</p>
+                        <div class="service-price">A partir de R$ 900</div>
+                        <a href="#contact" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Momentos Mágicos</h2>
+                <p>Veja fotos de festas que criamos com amor e dedicação</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1531172190894-ec9660e0e8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542816417-09836749781e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1568031813264-d394c5d474b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que dizem nossos clientes</h2>
+                <p>Depoimentos de pais que confiaram em nós para criar momentos especiais</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Ana Carolina</h4>
+                            <p>Mãe da Sofia (5 anos)</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Contratamos a Ativikids para o aniversário de 5 anos da Sofia e foi incrível! As crianças se divertiram muito com as atividades e os monitores foram super atenciosos. A decoração ficou linda, exatamente como imaginávamos. Recomendo!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Ricardo Almeida</h4>
+                            <p>Pai do Pedro (7 anos)</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Fiquei impressionado com a qualidade do serviço. Desde o primeiro contato foram muito profissionais. O tema de super-heróis que criaram para o Pedro foi fantástico e todas as crianças adoraram. Valeu cada centavo investido!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Fernanda Gomes</h4>
+                            <p>Mãe da Laura (4 anos)</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Já é o segundo ano que contratamos a Ativikids e mais uma vez superou nossas expectativas. A atenção aos detalhes e o cuidado com as crianças é impressionante. Laura ficou encantada com a festa de princesa e até hoje fala sobre isso."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Solicite um orçamento ou tire suas dúvidas sobre nossos serviços</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Fale conosco</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p>Av. Premium, 1234 - Jardim Luxo</p>
+                                <p>São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p>(11) 98765-4321</p>
+                                <p>(11) 3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p>contato@ativikids.com.br</p>
+                                <p>orçamentos@ativikids.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 9h às 18h</p>
+                    <p>Sábado: 9h às 13h</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Solicite um Orçamento</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Seu Nome</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Seu E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Seu Telefone</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Tipo de Evento</label>
+                            <select id="event-type" class="form-control" required>
+                                <option value="">Selecione...</option>
+                                <option value="aniversario">Aniversário Infantil</option>
+                                <option value="escola">Evento Escolar</option>
+                                <option value="corporativo">Evento Corporativo</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Data Prevista</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" placeholder="Conte-nos mais sobre seu evento..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Seus dados estão seguros conosco</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Ativi<span>Kids</span></a>
+                    <p>Criando memórias mágicas e inesquecíveis para crianças e famílias desde 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#testimonials">Depoimentos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Temas de Festa</a></li>
+                        <li><a href="#">Brinquedos Infláveis</a></li>
+                        <li><a href="#">Oficinas Criativas</a></li>
+                        <li><a href="#">Buffet Infantil</a></li>
+                        <li><a href="#">Pacotes Completos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p>(11) 98765-4321</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p>contato@ativikids.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p>Av. Premium, 1234</p>
+                            <p>São Paulo - SP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="American Express">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196563.png" alt="PayPal">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196560.png" alt="Bank Transfer">
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ativikids - Recreação Infantil Premium. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Simple form submission handler
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por seu interesse! Entraremos em contato em breve para discutir os detalhes do seu evento.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
