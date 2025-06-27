@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ativikids - Recreação Infantil Premium</title>
+    <title>Magic Moments - Recreação Infantil Premium em Maringá PR</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Recreação infantil premium em Maringá PR - Festas temáticas, monitores profissionais, brinquedos infláveis e diversão garantida para crianças. Orçamento via WhatsApp.">
+    <meta name="keywords" content="recreação infantil, festa infantil Maringá, animação infantil, buffet infantil Maringá, recreacionistas Maringá, festa criança Paraná">
+    <meta name="author" content="Magic Moments Recreação">
+    <meta name="geo.region" content="BR-PR">
+    <meta name="geo.placename" content="Maringá">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Magic Moments - Recreação Infantil Premium em Maringá">
+    <meta property="og:description" content="Serviços completos de recreação infantil para festas em Maringá e região.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.seusite.com.br">
+    <meta property="og:image" content="https://www.seusite.com.br/images/logo-social.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         :root {
             --purple-main: #6A359C;
@@ -130,6 +153,29 @@
         .btn-secondary:hover {
             background-color: var(--purple-main);
             color: var(--white);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366 !important;
+            font-size: 18px;
+            padding: 15px 25px;
+            animation: pulse 2s infinite;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E !important;
+            transform: scale(1.05);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         
         /* Hero Section */
@@ -449,52 +495,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .contact-form h3 {
-            margin-bottom: 20px;
-            font-size: 24px;
+        /* Localização Maringá */
+        .location {
+            padding: 60px 0;
+            text-align: center;
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        .location h2 {
+            margin-bottom: 30px;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
+        .location p {
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
         
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Open Sans', sans-serif;
-            transition: border-color 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--purple-main);
-        }
-        
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .security-badge {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .security-badge i {
-            color: var(--purple-main);
-            margin-right: 10px;
-            font-size: 20px;
+        .map-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         /* Footer */
@@ -633,6 +653,10 @@
             .btn {
                 width: 100%;
             }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -642,7 +666,7 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-magic"></i>
-                Ativi<span>Kids</span>
+                Magic<span>Moments</span>
             </a>
             <nav>
                 <ul>
@@ -660,11 +684,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Crie Memórias Mágicas para Seu Filho</h1>
-            <p>Recreação profissional para festas infantis inesquecíveis com segurança, diversão e muito glamour</p>
+            <h1>Recreação Infantil Premium em Maringá</h1>
+            <p>Transformamos festas infantis em experiências mágicas e inesquecíveis na região de Maringá - PR</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Solicitar Orçamento</a>
-                <a href="#services" class="btn btn-secondary">Ver Serviços</a>
+                <a href="#contact" class="btn btn-primary">Fale pelo WhatsApp</a>
+                <a href="#services" class="btn btn-secondary">Nossos Serviços</a>
             </div>
         </div>
     </section>
@@ -673,8 +697,8 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Por que escolher nossa recreação?</h2>
-                <p>Oferecemos uma experiência completa e personalizada para festas infantis de alto padrão</p>
+                <h2>Por que escolher nossa recreação em Maringá?</h2>
+                <p>Oferecemos uma experiência completa e personalizada para festas infantis de alto padrão em Maringá e região</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -682,7 +706,7 @@
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h3>Monitores Profissionais</h3>
-                    <p>Equipe especializada em recreação infantil, treinada em primeiros socorros e com experiência em eventos premium.</p>
+                    <p>Equipe especializada em recreação infantil, treinada em primeiros socorros e com experiência em eventos premium em Maringá.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -702,8 +726,8 @@
                     <div class="feature-icon">
                         <i class="fas fa-star"></i>
                     </div>
-                    <h3>Experiência Completa</h3>
-                    <p>Desde o planejamento até a execução, cuidamos de todos os detalhes para que você possa aproveitar a festa com seu filho.</p>
+                    <h3>Atendemos Toda Maringá</h3>
+                    <p>Zona urbana e cidades vizinhas como Sarandi, Paiçandu e Mandaguaçu com a mesma qualidade e profissionalismo.</p>
                 </div>
             </div>
         </div>
@@ -713,13 +737,13 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Nossos Serviços Premium</h2>
-                <p>Conheça nossos pacotes exclusivos para festas inesquecíveis</p>
+                <h2>Nossos Serviços em Maringá</h2>
+                <p>Pacotes completos para festas infantis memoráveis na região</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Temas de Festa">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Temas de Festa em Maringá">
                     </div>
                     <div class="service-content">
                         <h3>Temas Exclusivos</h3>
@@ -730,10 +754,10 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1570303345338-e1f0ed7b5885?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Spa">
+                        <img src="https://images.unsplash.com/photo-1570303345338-e1f0ed7b5885?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Brinquedos Infláveis em Maringá">
                     </div>
                     <div class="service-content">
-                        <h3>Spa</h3>
+                        <h3>Brinquedos Infláveis Premium</h3>
                         <p>Castelos, tobogãs e piscinas de bolinhas de alta qualidade e segurança para horas de diversão.</p>
                         <div class="service-price">A partir de R$ 800</div>
                         <a href="#contact" class="btn btn-primary">Saiba mais</a>
@@ -741,7 +765,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1608889825103-eb5c14bdd606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficinas Criativas">
+                        <img src="https://images.unsplash.com/photo-1608889825103-eb5c14bdd606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficinas Criativas Maringá">
                     </div>
                     <div class="service-content">
                         <h3>Oficinas Criativas</h3>
@@ -758,42 +782,42 @@
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>Nossos Momentos Mágicos</h2>
-                <p>Veja fotos de festas que criamos com amor e dedicação</p>
+                <h2>Festas Realizadas em Maringá</h2>
+                <p>Veja fotos de festas que criamos com amor e dedicação na região</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1531172190894-ec9660e0e8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1531172190894-ec9660e0e8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Recreação Infantil Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Animação Infantil Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Buffet Infantil Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542816417-09836749781e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1542816417-09836749781e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Criança Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1568031813264-d394c5d474b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Festa Infantil">
+                    <img src="https://images.unsplash.com/photo-1568031813264-d394c5d474b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Temas Festa Infantil Maringá">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -802,22 +826,40 @@
         </div>
     </section>
 
+    <!-- Localização Maringá -->
+    <section class="location">
+        <div class="container">
+            <h2>Atendemos em Maringá e Região</h2>
+            <p>Levamos nossa recreação infantil premium para toda a região de Maringá, incluindo Sarandi, Paiçandu, Mandaguaçu e cidades vizinhas. Garantimos a mesma qualidade e profissionalismo em todos os eventos.</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58503.19714875887!2d-51.937492!3d-23.425525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd6f12a89edbd%3A0x5592b1e4b113e31e!2sMaring%C3%A1%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Localização Maringá"></iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>O que dizem nossos clientes</h2>
+                <h2>O que dizem nossos clientes em Maringá</h2>
                 <p>Depoimentos de pais que confiaram em nós para criar momentos especiais</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente Maringá">
                         </div>
                         <div class="testimonial-author">
                             <h4>Ana Carolina</h4>
-                            <p>Mãe da Sofia (5 anos)</p>
+                            <p>Maringá - PR</p>
                         </div>
                     </div>
                     <div class="testimonial-stars">
@@ -827,16 +869,16 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Contratamos a Ativikids para o aniversário de 5 anos da Sofia e foi incrível! As crianças se divertiram muito com as atividades e os monitores foram super atenciosos. A decoração ficou linda, exatamente como imaginávamos. Recomendo!"</p>
+                    <p>"Contratamos a Magic Moments para o aniversário de 5 anos da Sofia e foi incrível! As crianças se divertiram muito com as atividades e os monitores foram super atenciosos. A decoração ficou linda, exatamente como imaginávamos. Recomendo para todas as mães de Maringá!"</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente Maringá">
                         </div>
                         <div class="testimonial-author">
                             <h4>Ricardo Almeida</h4>
-                            <p>Pai do Pedro (7 anos)</p>
+                            <p>Maringá - PR</p>
                         </div>
                     </div>
                     <div class="testimonial-stars">
@@ -846,16 +888,16 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Fiquei impressionado com a qualidade do serviço. Desde o primeiro contato foram muito profissionais. O tema de super-heróis que criaram para o Pedro foi fantástico e todas as crianças adoraram. Valeu cada centavo investido!"</p>
+                    <p>"Fiquei impressionado com a qualidade do serviço. Desde o primeiro contato foram muito profissionais. O tema de super-heróis que criaram para o Pedro foi fantástico e todas as crianças adoraram. Valeu cada centavo investido! Melhor recreação infantil de Maringá."</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente Maringá">
                         </div>
                         <div class="testimonial-author">
                             <h4>Fernanda Gomes</h4>
-                            <p>Mãe da Laura (4 anos)</p>
+                            <p>Sarandi - PR</p>
                         </div>
                     </div>
                     <div class="testimonial-stars">
@@ -865,7 +907,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>"Já é o segundo ano que contratamos a Ativikids e mais uma vez superou nossas expectativas. A atenção aos detalhes e o cuidado com as crianças é impressionante. Laura ficou encantada com a festa de princesa e até hoje fala sobre isso."</p>
+                    <p>"Já é o segundo ano que contratamos a Magic Moments e mais uma vez superou nossas expectativas. A atenção aos detalhes e o cuidado com as crianças é impressionante. Laura ficou encantada com a festa de princesa e até hoje fala sobre isso. Eles atendem Sarandi com o mesmo cuidado que Maringá!"</p>
                 </div>
             </div>
         </div>
@@ -876,7 +918,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Entre em Contato</h2>
-                <p>Solicite um orçamento ou tire suas dúvidas sobre nossos serviços</p>
+                <p>Solicite um orçamento ou tire suas dúvidas sobre nossos serviços em Maringá</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -887,8 +929,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>Av. Premium, 1234 - Jardim Luxo</p>
-                                <p>São Paulo - SP</p>
+                                <p>Av. Colombo, 1000 - Zona 7</p>
+                                <p>Maringá - PR</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -896,8 +938,8 @@
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div>
-                                <p>(11) 98765-4321</p>
-                                <p>(11) 3456-7890</p>
+                                <p>(44) 98765-4321</p>
+                                <p>(44) 3456-7890</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -905,8 +947,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <p>contato@ativikids.com.br</p>
-                                <p>orçamentos@ativikids.com.br</p>
+                                <p>contato@magicmoments.com.br</p>
                             </div>
                         </div>
                     </div>
@@ -915,56 +956,60 @@
                     <p>Sábado: 9h às 13h</p>
                 </div>
                 <div class="contact-form">
-                    <h3>Solicite um Orçamento</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Seu Nome</label>
-                            <input type="text" id="name" class="form-control" required>
+                    <h3>Fale Conosco pelo WhatsApp</h3>
+                    <p>Clique no botão abaixo para conversar diretamente com nossa equipe e solicitar um orçamento:</p>
+                    
+                    <a href="https://wa.me/5544999999999?text=Olá,%20gostaria%20de%20informações%20sobre%20recreação%20infantil%20em%20Maringá" 
+                       class="btn whatsapp-btn" 
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Chamar no WhatsApp
+                    </a>
+                    
+                    <p style="margin-top: 20px;">Ou se preferir, nos ligue:</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Seu E-mail</label>
-                            <input type="email" id="email" class="form-control" required>
+                        <div>
+                            <p>(44) 9999-9999</p>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Seu Telefone</label>
-                            <input type="tel" id="phone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="event-type">Tipo de Evento</label>
-                            <select id="event-type" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="aniversario">Aniversário Infantil</option>
-                                <option value="escola">Evento Escolar</option>
-                                <option value="corporativo">Evento Corporativo</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Data Prevista</label>
-                            <input type="date" id="date" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" class="form-control" placeholder="Conte-nos mais sobre seu evento..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
-                        <div class="security-badge">
-                            <i class="fas fa-lock"></i>
-                            <span>Seus dados estão seguros conosco</span>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Schema.org para Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ChildrensParty",
+      "name": "Magic Moments Recreação Infantil",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Colombo, 1000",
+        "addressLocality": "Maringá",
+        "addressRegion": "PR",
+        "postalCode": "87000-000",
+        "addressCountry": "BR"
+      },
+      "telephone": "+554499999999",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "R$ 800 - R$ 3000",
+      "image": "https://www.seusite.com.br/images/logo.jpg",
+      "description": "Serviços premium de recreação infantil em Maringá",
+      "url": "https://www.seusite.com.br"
+    }
+    </script>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">Ativi<span>Kids</span></a>
-                    <p>Criando memórias mágicas e inesquecíveis para crianças e famílias desde 2010.</p>
+                    <a href="#" class="footer-logo">Magic<span>Moments</span></a>
+                    <p>Criando memórias mágicas e inesquecíveis para crianças e famílias em Maringá e região desde 2010.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -983,13 +1028,13 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Serviços</h4>
+                    <h4>Áreas de Atendimento</h4>
                     <ul>
-                        <li><a href="#">Temas de Festa</a></li>
-                        <li><a href="#">Spa</a></li>
-                        <li><a href="#">Oficinas Criativas</a></li>
-                        <li><a href="#">Buffet Infantil</a></li>
-                        <li><a href="#">Pacotes Completos</a></li>
+                        <li><a href="#">Maringá</a></li>
+                        <li><a href="#">Sarandi</a></li>
+                        <li><a href="#">Paiçandu</a></li>
+                        <li><a href="#">Mandaguaçu</a></li>
+                        <li><a href="#">Outras cidades</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -999,7 +1044,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <p>(11) 98765-4321</p>
+                            <p>(44) 98765-4321</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1007,7 +1052,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <p>contato@ativikids.com.br</p>
+                            <p>contato@magicmoments.com.br</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1015,8 +1060,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <p>Av. Premium, 1234</p>
-                            <p>São Paulo - SP</p>
+                            <p>Maringá - PR</p>
                         </div>
                     </div>
                 </div>
@@ -1029,7 +1073,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/196/196560.png" alt="Bank Transfer">
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Ativikids - Recreação Infantil Premium. Todos os direitos reservados.</p>
+                <p>&copy; 2023 Magic Moments - Recreação Infantil Premium em Maringá. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1045,14 +1089,6 @@
                 });
             });
         });
-        
-        // Simple form submission handler
-        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Obrigado por seu interesse! Entraremos em contato em breve para discutir os detalhes do seu evento.');
-            this.reset();
-        });
     </script>
 </body>
 </html>
-
