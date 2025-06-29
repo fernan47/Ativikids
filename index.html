@@ -245,6 +245,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
             color: var(--white);
             padding-top: 80px;
@@ -286,9 +287,12 @@
         
         .hero-content {
             max-width: 800px;
+            width: 90%;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            padding: 20px; 
+            transform: none; 
         }
         
         .hero h1 {
@@ -739,9 +743,15 @@
             }
             
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px; 
+                margin-bottom: 15px;
             }
-            
+
+            .hero p {
+            font-size: 18px; /* Tamanho menor para mobile */
+            margin-bottom: 25px;
+            }
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 10px;
@@ -782,9 +792,6 @@
         <div class="hero-slideshow">
             <div class="hero-slide active" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/spa.jpg?raw=true');"></div>
             <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/dino1.jpg?raw=true');"> 
-            <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/espuma.jpg?raw=true');"></div>
-            <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/spa2.jpg?raw=true');"></div>
-            <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/bolhas1.jpg?raw=true');"></div>
         </div>
         <div class="container hero-content">
             <h1>Recreação Infantil em Maringá</h1>
