@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos os Serviços | Ativikids Recreação Infantil em Maringá PR</title>
+    
+    <!-- Meta Tags (repetidas do index para SEO) -->
+    <meta name="description" content="⭐ Conheça todos os serviços de recreação infantil da Ativikids em Maringá PR (44). Festas temáticas, monitores profissionais, brinquedos infláveis e muito mais!">
+    <meta name="keywords" content="serviços recreação infantil Maringá, pacotes festa infantil, animação infantil completa, buffet infantil Maringá, todos serviços recreação">
+    
+    <!-- Favicon e Fontes -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --purple-main: #6A359C;
+            --purple-pastel: #B399D4;
+            --orange-main: #FF6B35;
+            --orange-pastel: #FFB088;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--purple-main);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--purple-main);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--orange-main);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #E05A2B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--purple-main);
+            border: 2px solid var(--purple-main);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--purple-main);
+            color: var(--white);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366 !important;
+            font-size: 18px;
+            padding: 15px 25px;
+            animation: pulse 2s infinite;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E !important;
+            transform: scale(1.05);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(106, 53, 156, 0.8), rgba(106, 53, 156, 0.8)), 
+                        url('https://github.com/fernan47/Ativikids/blob/main/spa.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .page-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: var(--light-gray);
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: var(--purple-main);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            color: #666;
+        }
+        
+        /* Services Section */
+        .all-services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--orange-main);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .service-features {
+            margin-bottom: 20px;
+        }
+        
+        .service-features h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--purple-main);
+        }
+        
+        .service-features ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+        
+        .service-features li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        /* Service Categories */
+        .service-categories {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: var(--purple-main);
+        }
+        
+        .category-card:hover h3,
+        .category-card:hover .category-icon {
+            color: var(--white);
+        }
+        
+        .category-icon {
+            font-size: 40px;
+            color: var(--purple-main);
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .category-card h3 {
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(106, 53, 156, 0.9), rgba(106, 53, 156, 0.9)), 
+                        url('https://github.com/fernan47/Ativikids/blob/main/dino1.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--purple-main);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--orange-main);
+        }
+        
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--orange-pastel);
+        }
+        
+        .footer-contact .contact-item {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer-contact .contact-icon {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .payment-methods img {
+            height: 30px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .page-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .page-hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
+                    <li><a href="index.html#gallery">Galeria</a></li>
+                    <li><a href="index.html#testimonials">Depoimentos</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="btn btn-primary">Reserve Agora</a>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Todos Nossos Serviços</h1>
+            <p>Conheça nossa variedade de opções para tornar sua festa infantil inesquecível em Maringá e região</p>
+            <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20os%20serviços%20da%20Ativikids" 
+               class="btn whatsapp-btn" 
+               target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Fale Conosco
+            </a>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb container">
+        <a href="index.html">Início</a> &gt; <span>Todos os Serviços</span>
+    </div>
+
+    <!-- All Services Section -->
+    <section class="all-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços Completos</h2>
+                <p>Oferecemos pacotes completos ou serviços avulsos para sua festa infantil em Maringá</p>
+            </div>
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/main/dino1.jpg?raw=true" alt="Recreação Temática Dinossauros">
+                    </div>
+                    <div class="service-content">
+                        <h3>Recreação Temática Dinossauros</h3>
+                        <p>Uma aventura jurássica com atividades educativas e divertidas sobre dinossauros, ideal para crianças de 3 a 10 anos.</p>
+                        
+                        <div class="service-features">
+                            <h4>Inclui:</h4>
+                            <ul>
+                                <li>2 monitores caracterizados</li>
+                                <li>Atividades paleontológicas</li>
+                                <li>Oficina de fósseis</li>
+                                <li>Caça ao tesouro jurássica</li>
+                                <li>Decoração temática básica</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 1.200</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20pacote%20Dinossauros" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/main/spa.jpg?raw=true" alt="SPA Party para Princesas">
+                    </div>
+                    <div class="service-content">
+                        <h3>SPA Party para Princesas</h3>
+                        <p>Experiência luxuosa de SPA para meninas com tratamentos de beleza adaptados para crianças, perfeito para aniversários de 5 a 12 anos.</p>
+                        
+                        <div class="service-features">
+                            <h4>Inclui:</h4>
+                            <ul>
+                                <li>2 monitoras especializadas</li>
+                                <li>Manicure e pedicure infantil</li>
+                                <li>Máscaras faciais de frutas</li>
+                                <li>Penteado e maquiagem leve</li>
+                                <li>Decoração rosa e dourado</li>
+                                <li>Fotos com acessórios de princesa</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 1.500</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20SPA%20Party" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/images/7.jpg?raw=true" alt="Oficinas Criativas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Oficinas Criativas</h3>
+                        <p>Atividades lúdicas e educativas que estimulam a criatividade e coordenação motora das crianças.</p>
+                        
+                        <div class="service-features">
+                            <h4>Opções:</h4>
+                            <ul>
+                                <li>Oficina de Slime</li>
+                                <li>Pintura em Tela</li>
+                                <li>Culinária Infantil</li>
+                                <li>Customização de Camisetas</li>
+                                <li>Construção de Brinquedos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 800</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20as%20Oficinas%20Criativas" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 4 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/images/10.jpg?raw=true" alt="Brinquedos Infláveis Premium">
+                    </div>
+                    <div class="service-content">
+                        <h3>Brinquedos Infláveis Premium</h3>
+                        <p>Brinquedos infláveis de alta qualidade e segurança para diversão garantida em sua festa.</p>
+                        
+                        <div class="service-features">
+                            <h4>Opções:</h4>
+                            <ul>
+                                <li>Castelo Inflável (3x3m)</li>
+                                <li>Tobogã Inflável (4m altura)</li>
+                                <li>Piscina de Bolinhas</li>
+                                <li>Pula-Pula Temático</li>
+                                <li>Combos para festas grandes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 600</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20Brinquedos%20Infláveis" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 5 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/images/9.jpg?raw=true" alt="Personagens e Temas Personalizados">
+                    </div>
+                    <div class="service-content">
+                        <h3>Personagens e Temas Personalizados</h3>
+                        <p>Traga o tema preferido do seu filho para a festa com nossos personagens e decorações exclusivas.</p>
+                        
+                        <div class="service-features">
+                            <h4>Temas Populares:</h4>
+                            <ul>
+                                <li>Super Heróis</li>
+                                <li>Princesas Disney</li>
+                                <li>Patrulha Canina</li>
+                                <li>Frozen</li>
+                                <li>Homem-Aranha</li>
+                                <li>Personalizado (consulte)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 900</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20Personagens%20Temáticos" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 6 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://github.com/fernan47/Ativikids/blob/images/8.jpg?raw=true" alt="Buffet Completo Infantil">
+                    </div>
+                    <div class="service-content">
+                        <h3>Buffet Completo Infantil</h3>
+                        <p>Pacote completo para sua festa com recreação, alimentação e decoração - tudo incluso!</p>
+                        
+                        <div class="service-features">
+                            <h4>Inclui:</h4>
+                            <ul>
+                                <li>3 horas de recreação</li>
+                                <li>2 monitores profissionais</li>
+                                <li>Decoração temática completa</li>
+                                <li>Buffet infantil (salgados, doces, bolo)</li>
+                                <li>Lembrancinhas personalizadas</li>
+                                <li>Álbum de fotos digital</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-price">A partir de R$ 2.500</div>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20Buffet%20Completo" class="btn btn-primary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="service-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Categorias de Serviços</h2>
+                <p>Explore nossas opções por categoria para encontrar o ideal para sua festa</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Recreação</h3>
+                    <p>Monitores, brincadeiras e atividades</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Alimentação</h3>
+                    <p>Doces, salgados e temáticos</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Decoração</h3>
+                    <p>Temas completos e personalizados</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografia</h3>
+                    <p>Registro profissional da festa</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Especiais</h3>
+                    <p>Aniversários e datas comemorativas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossos serviços em Maringá</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Quais áreas de Maringá vocês atendem?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Atendemos toda a região de Maringá, incluindo Zona Norte, Sul, Leste, Oeste e Centro. Também atendemos cidades próximas como Sarandi, Paiçandu, Mandaguaçu, Marialva e Mandaguari. Para locais mais distantes, pode haver acréscimo no valor devido ao deslocamento.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Qual o tempo mínimo de antecedência para reservar?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Recomendamos reservar com pelo menos 15 dias de antecedência, especialmente para fins de semana e feriados. Para pacotes completos ou temas específicos, o ideal é reservar com 30 dias de antecedência. Em último caso, consulte-nos sobre disponibilidade para datas próximas.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Vocês fornecem toda a estrutura ou preciso preparar algo?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Fornecemos toda a estrutura necessária para os serviços contratados, incluindo materiais para atividades, equipamentos e decoração quando incluída no pacote. O cliente precisa apenas fornecer um espaço adequado (salão, quintal, etc.) com acesso à energia elétrica quando necessário.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Como funciona o pagamento?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>O pagamento é feito em duas parcelas: 50% no ato da reserva (via transferência, PIX ou cartão) e os 50% restantes no dia do evento. Aceitamos todas as bandeiras de cartão, com parcelamento em até 3x sem juros. Para valores acima de R$ 2.000, consulte condições especiais.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>E se chover no dia do evento?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Para eventos ao ar livre, recomendamos ter um plano B com espaço coberto. Em caso de chuva, adaptamos as atividades para o espaço disponível. Brinquedos infláveis não podem ser usados com chuva por questões de segurança. Em caso de cancelamento por condições climáticas, reagendamos sem custos adicionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para transformar sua festa em um evento inesquecível?</h2>
+            <p>Entre em contato agora mesmo e vamos criar juntos a festa dos sonhos do seu filho em Maringá!</p>
+            <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20para%20uma%20festa%20infantil" 
+               class="btn whatsapp-btn" 
+               target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Fale pelo WhatsApp
+            </a>
+            <p style="margin-top: 20px;">Ou ligue: (44) 99934-0770</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img" style="filter: brightness(0) invert(1);">
+                    </a>
+                    <p>Criando memórias mágicas e inesquecíveis para crianças e famílias em Maringá e região desde 2010.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ativikids/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5544999340770?text=Olá,%20gostaria%20de%20informações%20sobre%20recreação%20infantil%20em%20Maringá"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="index.html#gallery">Galeria</a></li>
+                        <li><a href="index.html#testimonials">Depoimentos</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="servicos.html">Recreação Temática</a></li>
+                        <li><a href="servicos.html">SPA Party</a></li>
+                        <li><a href="servicos.html">Oficinas Criativas</a></li>
+                        <li><a href="servicos.html">Brinquedos Infláveis</a></li>
+                        <li><a href="servicos.html">Buffet Completo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                   <h4>Contato</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p>(44) 99934-0770</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p>@Ativikids</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p>Maringá - PR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="American Express">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196563.png" alt="PayPal">
+                <img src="https://cdn-icons-png.flaticon.com/512/196/196560.png" alt="Bank Transfer">
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ativikids - Recreação Infantil em Maringá. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
