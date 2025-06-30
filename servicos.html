@@ -898,7 +898,7 @@
                     </ul>
                 </div>
                 <div class="footer-contact">
-                   <h4>Contato</h4>
+                    <h4>Contato</h4>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
@@ -950,6 +950,20 @@
             });
         });
 
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
