@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Bloqueios para Googlebot
+User-agent: Googlebot
+Disallow: *?*
+Disallow: /*.jpg$
+
+# Otimização para Ads
+User-agent: AdsBot-Google
+Disallow: /private/
+Disallow: /temp/
+
+# Bloqueio de bots indesejados
+User-agent: PetalBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+
+# Controle de crawling
+User-agent: dotbot
+Crawl-delay: 5
+User-agent: AhrefsBot
+Crawl-delay: 5
+
+Sitemap: https://www.ativikids.com.br/sitemap.xml
