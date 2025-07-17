@@ -1,0 +1,36 @@
+name: Convert JPG to WebP
+
+on:
+  workflow_dispatch:  # Permite execução manual
+  push:
+    paths:
+      - '**.jpg'     # Dispara ao modificar arquivos JPG
+      - '**.jpeg'    # Inclui variações de extensão
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install WebP tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y webp
+        
+    - name: Convert JPG to WebP
+      run: |
+        find . \( -iname "*.jpg" -o -iname "*.jpeg" \) | while read jpg; do
+          webp="${jpg%.*}.webp"          # Mantém mesma estrutura de pastas
+          mkdir -p "$(dirname "$webp")"   # Cria diretórios se necessário
+          cwebp -q 85 "$jpg" -o "$webp"  # Qualidade 85%
+          echo "Convertido: $jpg → $webp"
+        done
+        
+    - name: Commit changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add .
+        git commit -m "Auto: Convert JPG to WebP [skip ci]" || echo "Nenhuma alteração para commitar"
+        git push
