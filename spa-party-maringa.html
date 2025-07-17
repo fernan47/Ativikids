@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abertura de Matéria do Blog | Ativikids®</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/favicon.ico" type="image/x-icon">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --purple-main: #6A359C;
+            --orange-main: #FF6B35;
+            --white: #FFFFFF;
+            --light-gray: #F8F9FA;
+            --text-color: #343A40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background-color: var(--light-gray);
+            padding-top: 80px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Conteúdo principal */
+        .article-opener {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        
+        .article-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--purple-main);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Container da imagem - VERSÃO SIMPLIFICADA E FUNCIONAL */
+        .article-image-container {
+            width: 100%;
+            margin: 30px auto;
+            text-align: center;
+        }
+        
+        .article-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .article-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        
+        .continue-reading {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--orange-main);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--purple-main);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.webp" alt="Ativikids" class="logo-img">
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <article class="article-opener">
+            <h1 class="article-title">Como Organizar um SPA Party Perfeito em Maringá</h1>
+            
+            <!-- IMAGEM PRINCIPAL - VERSÃO GARANTIDA -->
+            <div class="article-image-container">
+                <img src="https://github.com/fernan47/Ativikids/blob/main/spa.jpg?raw=true" 
+                     alt="Crianças em SPA Party" 
+                     class="article-image"
+                     style="max-height: 400px;">
+            </div>
+            
+            <div class="article-excerpt">
+                <p>Organizar uma <strong>SPA Party</strong> para crianças em Maringá pode ser uma experiência mágica e inesquecível. Neste guia completo, vamos te mostrar todos os passos para criar o evento perfeito.</p>
+                
+                <p>As festas SPA estão se tornando cada vez mais populares entre as crianças, especialmente para meninas de 5 a 12 anos. Elas combinam diversão com cuidados pessoais, criando uma experiência única.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="/blog" class="continue-reading">Continuar Lendo</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/contato">Contato</a>
+            </div>
+            <p>&copy; 2025 Ativikids Recreação Infantil</p>
+        </div>
+    </footer>
+</body>
+</html>
