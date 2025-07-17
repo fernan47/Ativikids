@@ -1,29 +1,26 @@
 name: Convert PNG to WebP
+
 on:
+  workflow_dispatch: # Agora aparece o botão de execução manual
   push:
     paths:
-      - '**.png'  # Executa apenas quando arquivos PNG são alterados
+      - '**.png'
 
 jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Setup tools
+      run: sudo apt-get install -y webp pngquant
       
-    - name: Setup WebP tools
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y webp pngquant
-        
-    - name: Convert PNG to WebP
+    - name: Convert files
       run: |
         find . -name '*.png' | while read png; do
           webp="${png%.*}.webp"
           mkdir -p "$(dirname "$webp")"
           cwebp -q 85 "$png" -o "$webp"
-          
-          # Otimiza o PNG original (opcional)
-          pngquant --force --skip-if-larger --quality 65-80 "$png" --output "$png"
         done
         
     - name: Commit changes
@@ -31,6 +28,5 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Auto: Convert PNG to WebP [skip ci]" || echo "Nenhuma alteração para commitar"
+        git commit -m "Convert PNG to WebP [skip ci]" || echo "No changes"
         git push
-
