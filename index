@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ativikids Recreação Infantil | Maringá PR">
 <meta name="twitter:description" content="Recreação profissional para festas infantis em Maringá com segurança e diversão garantida!">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/fernan47/Ativikids/main/logo.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fernan47/Ativikids/main/logo.webp">
 
 <!-- Apple/IOS -->
 <meta name="apple-mobile-web-app-title" content="Ativikids">
@@ -59,7 +59,7 @@
   "@type": "ChildrensParty",
   "name": "Ativikids Recreação Infantil",
   "url": "https://www.ativikids.com.br",
-  "logo": "https://raw.githubusercontent.com/fernan47/Ativikids/main/logo.png",
+  "logo": "https://raw.githubusercontent.com/fernan47/Ativikids/main/logo.webp",
   "description": "Serviços profissionais de recreação infantil em Maringá PR",
   "address": {
     "@type": "PostalAddress",
@@ -766,7 +766,7 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+                <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.webp" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
             </a>
             <nav>
                 <ul>
@@ -783,9 +783,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/spa.jpg?raw=true');"></div>
-            <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/dino1.jpg?raw=true');"></div>
-            <div class="hero-slide" style="background-image: url('https://github.com/fernan47/Ativikids/blob/main/Design%20sem%20nome%20(2).png?raw=true');"></div> 
+            <div class="hero-slide active" style="background-image: url('https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/spa.webp');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/dino1.webp');"></div>
+            <div class="hero-slide" style="background-image: url('https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/Design%20sem%20nome%20(2).webp');"></div> 
         </div>
         <div class="container hero-content">
             <h1>Recreação Infantil em Maringá</h1>
@@ -983,7 +983,7 @@
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
-                            <img src="https://github.com/fernan47/Ativikids/blob/main/J.png?raw=true" alt="Cliente Maringá">
+                            <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/J.webp" alt="Cliente Maringá">
                         </div>
                         <div class="testimonial-author">
                             <h4>Jhenyfer Assolari</h4>
@@ -1117,7 +1117,7 @@ Proporciona atividades incríveis com muito amor, carinho e respeito com as cria
       "telephone": "+554499999999",
       "openingHours": "Mo-Fr 09:00-18:00",
       "priceRange": "R$ 800 - R$ 3000",
-      "image": "https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.png",
+      "image": "https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.webp",
       "description": "Serviços premium de recreação infantil em Maringá",
       "url": "https://www.seusite.com.br"
     }
@@ -1129,7 +1129,7 @@ Proporciona atividades incríveis com muito amor, carinho e respeito com as cria
             <div class="footer-container">
                 <div class="footer-about">
                     <a href="#" class="footer-logo">
-                        <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.png" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
+                        <img src="https://raw.githubusercontent.com/fernan47/Ativikids/refs/heads/main/logo.webp" alt="Ativikids - Recreação Infantil em Maringá" class="logo-img">
                     </a>
                     <p>Criando memórias mágicas e inesquecíveis para crianças e famílias em Maringá e região desde 2018.</p>
                     <div class="social-links">
