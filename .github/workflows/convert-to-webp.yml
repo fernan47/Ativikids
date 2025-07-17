@@ -33,3 +33,4 @@ jobs:
         git add .
         git commit -m "Auto: Convert PNG to WebP [skip ci]" || echo "Nenhuma alteração para commitar"
         git push
+
