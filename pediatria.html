@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ganho de Peso Pediátrico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f5;
+            color: var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+        
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* NOVO ESTILO ADICIONADO */
+        .static-date {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            background-color: #e9ecef;
+            color: #495057;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .calculate-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 25px;
+        }
+
+        #dailyGain {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin: 10px 0;
+        }
+        
+        #feedback {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+        
+        .feedback-good {
+            color: var(--success-color);
+            background-color: #e9f7ef;
+        }
+
+        .feedback-warning {
+            color: #856404;
+            background-color: #fff3cd;
+        }
+
+        .feedback-low {
+            color: var(--danger-color);
+            background-color: #f8d7da;
+        }
+
+        .reference-card {
+            background-color: var(--light-color);
+        }
+        
+        .reference-card h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .reference-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reference-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .reference-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 500px) {
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Ganho de Peso</h1>
+
+        <div class="card">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="initialDate">Data da 1ª Pesagem</label>
+                    <input type="date" id="initialDate" required>
+                </div>
+                <div class="input-group">
+                    <label for="initialWeight">Peso Anterior (gramas)</label>
+                    <input type="number" id="initialWeight" placeholder="Ex: 3200" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="currentDateDisplay">Data da Consulta Atual</label>
+                    <p id="currentDateDisplay" class="static-date"></p>
+                </div>
+                <div class="input-group">
+                    <label for="currentWeight">Peso Atual (gramas)</label>
+                    <input type="number" id="currentWeight" placeholder="Ex: 4100" required>
+                </div>
+            </div>
+
+            <button id="calculateBtn" class="calculate-btn">Calcular Ganho Diário</button>
+        </div>
+
+        <div id="result" class="card result-card hidden">
+            <h2>Resultado</h2>
+            <p>O ganho de peso diário estimado foi de:</p>
+            <strong id="dailyGain"></strong>
+            <p id="feedback"></p>
+        </div>
+
+        <div class="card reference-card">
+            <h3>Valores de Referência (1° Ano)</h3>
+            <ul>
+                <li><span>1º Trimestre (0-3 meses)</span> <strong>~23 g/dia</strong></li>
+                <li><span>2º Trimestre (3-6 meses)</span> <strong>~20 g/dia</strong></li>
+                <li><span>3º Trimestre (6-9 meses)</span> <strong>~15 g/dia</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Seleciona os elementos do DOM (JAVASCRIPT ALTERADO)
+        const initialDateInput = document.getElementById('initialDate');
+        const initialWeightInput = document.getElementById('initialWeight');
+        const currentDateDisplay = document.getElementById('currentDateDisplay'); // Alterado
+        const currentWeightInput = document.getElementById('currentWeight');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resultDiv = document.getElementById('result');
+        const dailyGainSpan = document.getElementById('dailyGain');
+        const feedbackP = document.getElementById('feedback');
+
+        // Define a data atual como padrão no campo "Data da Consulta Atual"
+        function setTodayDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            // JAVASCRIPT ALTERADO
+            currentDateDisplay.textContent = `${dd}/${mm}/${yyyy}`;
+        }
+
+        // Função principal de cálculo
+        function calculateWeightGain() {
+            // Pega os valores e converte para os tipos corretos (JAVASCRIPT ALTERADO)
+            const initialDate = new Date(initialDateInput.value);
+            const initialWeight = parseFloat(initialWeightInput.value);
+            const currentDate = new Date(); // Alterado: Pega a data atual do sistema
+            const currentWeight = parseFloat(currentWeightInput.value);
+
+            // Validação dos inputs (JAVASCRIPT ALTERADO)
+            if (!initialDateInput.value || isNaN(initialWeight) || isNaN(currentWeight)) { // Validação removida
+                alert("Por favor, preencha todos os campos corretamente.");
+                return;
+            }
+
+            if (initialWeight <= 0 || currentWeight <= 0) {
+                alert("Os pesos devem ser valores positivos.");
+                return;
+            }
+
+            if (initialDate >= currentDate) {
+                alert("A data da primeira pesagem deve ser anterior à data da consulta atual.");
+                return;
+            }
+
+            // Calcula a diferença de tempo em milissegundos e converte para dias
+            const timeDifference = currentDate.getTime() - initialDate.getTime();
+            const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+
+            if (daysDifference < 1) {
+                 alert("O intervalo entre as datas deve ser de pelo menos 1 dia.");
+                return;
+            }
+            
+            // Calcula a diferença de peso
+            const weightDifference = currentWeight - initialWeight;
+
+            // Calcula o ganho diário
+            const dailyGain = weightDifference / daysDifference;
+
+            // Exibe o resultado
+            dailyGainSpan.textContent = `${dailyGain.toFixed(1)} g/dia`;
+            
+            // Fornece feedback com base na idade da criança
+            let ageInDays = (currentDate.getTime() - initialDate.getTime()) / (1000 * 60 * 60 * 24);
+            
+            let referenceGain = 0;
+            let feedbackText = '';
+            let feedbackClass = '';
+
+            if (ageInDays <= 90) { // 1º Trimestre
+                referenceGain = 23;
+                feedbackText = 'para o 1º trimestre';
+            } else if (ageInDays <= 180) { // 2º Trimestre
+                referenceGain = 20;
+                feedbackText = 'para o 2º trimestre';
+            } else if (ageInDays <= 270) { // 3º Trimestre
+                referenceGain = 15;
+                feedbackText = 'para o 3º trimestre';
+            } else {
+                feedbackText = '(referência não aplicável para esta idade)';
+            }
+            
+            if (referenceGain > 0) {
+                 if (dailyGain >= referenceGain * 0.8) { // Dentro ou acima do esperado
+                    feedbackP.textContent = `Ganho de peso adequado ${feedbackText}.`;
+                    feedbackClass = 'feedback-good';
+                } else if (dailyGain >= referenceGain * 0.6) { // Um pouco abaixo
+                    feedbackP.textContent = `Ganho de peso em alerta ${feedbackText}. Acompanhar.`;
+                    feedbackClass = 'feedback-warning';
+                } else { // Bem abaixo
+                    feedbackP.textContent = `Ganho de peso abaixo do esperado ${feedbackText}. Investigar.`;
+                    feedbackClass = 'feedback-low';
+                }
+            } else {
+                 feedbackP.textContent = 'Cálculo realizado.';
+                 feedbackClass = 'feedback-good';
+            }
+
+            feedbackP.className = ''; // Limpa classes antigas
+            feedbackP.classList.add(feedbackClass);
+
+            // Mostra o card de resultado
+            resultDiv.classList.remove('hidden');
+        }
+
+        // Adiciona o evento de clique ao botão
+        calculateBtn.addEventListener('click', calculateWeightGain);
+        
+        // Inicializa a página
+        window.onload = setTodayDate;
+
+    </script>
+</body>
+</html>
