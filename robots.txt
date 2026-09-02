@@ -4,7 +4,7 @@ Allow: /
 # Bloqueios para Googlebot
 User-agent: Googlebot
 Disallow: *?*
-Disallow: /*.jpg$
+# A regra que bloqueava imagens foi removida para potencializar o Google Imagens
 
 # Otimização para Ads
 User-agent: AdsBot-Google
