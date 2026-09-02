@@ -1,5 +1,3 @@
-https://raw.githubusercontent.com/fernan47/Ativikids/main/logo.png
-
 🎪 Sobre Nós
 A Ativikids é especialista em recreação infantil e entretenimento para eventos em Maringá e região. Oferecemos serviços profissionais para festas, inaugurações e eventos corporativos, garantindo diversão e segurança para todas as idades.
 
